@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "preserve",
+    "baseUrl": "./src",
+    "paths": {
+      "@main/assets/*": ["./features/app/assets/*"],
+      "@main/components/*": ["./features/app/components/*"],
+      "@main/containers/*": ["./features/app/containers/*"],
+      "@main/data/*": ["./features/app/data/*"],
+      "@main/layouts/*": ["./features/app/layouts/*"],
+      "@common/*": ["./common/*"]
+    }
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
