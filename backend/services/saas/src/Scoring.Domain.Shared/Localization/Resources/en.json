@@ -5,26 +5,5 @@
     "App:TenantAlreadyExists": "Организация {name} уже существует.",
     "App:TenantNotFound": "Организация {name} не найдена.",
     "App:AuthenticateFailed": "Неправильный логин или пароль.",
-
-    "Permission:Exercises": "Задания",
-    "Permission:Exercises.Self": "Задания",
-    "Permission:Exercises.Create": "Добавлять задания",
-    "Permission:Exercises.Read": "Смотреть задания",
-    "Permission:Exercises.Update": "Изменять задания",
-    "Permission:Exercises.Delete": "Удалять задания",
-
-    "Permission:ExerciseCategories": "Категория заданий",
-    "Permission:ExerciseCategories.Self": "Категория заданий",
-    "Permission:ExerciseCategories.Create": "Добавлять категории заданий",
-    "Permission:ExerciseCategories.Read": "Смотреть категории заданий",
-    "Permission:ExerciseCategories.Update": "Изменять категории заданий",
-    "Permission:ExerciseCategories.Delete": "Удалять категории заданий",
-
-    "Permission:ExerciseForms": "Формы в заданиях",
-    "Permission:ExerciseForms.Self": "Формы в заданиях",
-    "Permission:ExerciseForms.Create": "Добавлять формы в задания",
-    "Permission:ExerciseForms.Read": "Смотреть формы в заданиях",
-    "Permission:ExerciseForms.Update": "Изменять формы в заданиях",
-    "Permission:ExerciseForms.Delete": "Удалять формы в заданиях"
   }
 }
