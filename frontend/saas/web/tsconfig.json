@@ -1,0 +1,50 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "preserve",
+    "baseUrl": "./src",
+    "paths": {
+      "@home/assets/*": ["./features/home/assets/*"],
+      "@home/components/*": ["./features/home/components/*"],
+      "@home/containers/*": ["./features/home/containers/*"],
+      "@home/data/*": ["./features/home/data/*"],
+      "@home/layouts/*": ["./features/home/layouts/*"],
+
+      "@auth/assets/*": ["./features/auth/assets/*"],
+      "@auth/components/*": ["./features/auth/components/*"],
+      "@auth/containers/*": ["./features/auth/containers/*"],
+      "@auth/data/*": ["./features/auth/data/*"],
+      "@auth/layouts/*": ["./features/auth/layouts/*"],
+
+      "@app/assets/*": ["./features/app/assets/*"],
+      "@app/components/*": ["./features/app/components/*"],
+      "@app/containers/*": ["./features/app/containers/*"],
+      "@app/data/*": ["./features/app/data/*"],
+      "@app/layouts/*": ["./features/app/layouts/*"],
+
+      "@common/*": ["./common/*"]
+    }
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

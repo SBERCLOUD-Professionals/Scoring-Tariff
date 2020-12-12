@@ -27,6 +27,7 @@
       <ProjectReference Include="..\Scoring.App.Abp\Scoring.App.Abp.csproj" />
       <ProjectReference Include="..\Scoring.App.Account\Scoring.App.Account.csproj" />
       <ProjectReference Include="..\Scoring.App.MultiTenancy\Scoring.App.MultiTenancy.csproj" />
+      <ProjectReference Include="..\Scoring.App.Tariff\Scoring.App.Tariff.csproj" />
       <ProjectReference Include="..\Scoring.EntityFrameworkCore.DbMigrations\Scoring.EntityFrameworkCore.DbMigrations.csproj" />
       <ProjectReference Include="..\Scoring.HttpApi\Scoring.HttpApi.csproj" />
   </ItemGroup>

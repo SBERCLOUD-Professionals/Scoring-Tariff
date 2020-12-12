@@ -43,7 +43,8 @@ namespace Scoring
         typeof(ScoringCoreAppModule),
         typeof(ScoringAbpAppModule),
         typeof(ScoringMultiTenancyAppModule),
-        typeof(ScoringAccountAppModule)
+        typeof(ScoringAccountAppModule),
+        typeof(ScoringTariffAppModule)
     )]
     public class ScoringHttpApiHostModule : AbpModule
     {
@@ -103,6 +104,8 @@ namespace Scoring
                     o => o.RootPath = ScoringMultiTenancyAppModule.RootPath);
                 options.ConventionalControllers.Create(typeof(ScoringAccountAppModule).Assembly,
                     o => { o.RootPath = ScoringAccountAppModule.RootPath; });
+                options.ConventionalControllers.Create(typeof(ScoringTariffAppModule).Assembly,
+                    o => { o.RootPath = ScoringTariffAppModule.RootPath; });
             });
         }
         
