@@ -4,6 +4,6 @@
     "App:UserAlreadyExists": "Пользователь {email} уже существует.",
     "App:TenantAlreadyExists": "Организация {name} уже существует.",
     "App:TenantNotFound": "Организация {name} не найдена.",
-    "App:AuthenticateFailed": "Неправильный логин или пароль.",
+    "App:AuthenticateFailed": "Неправильный логин или пароль."
   }
 }
