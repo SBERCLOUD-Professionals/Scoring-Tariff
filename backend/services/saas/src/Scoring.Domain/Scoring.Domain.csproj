@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>Scoring</RootNamespace>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Identity.Domain" Version="3.3.1" />
+    <PackageReference Include="Volo.Abp.PermissionManagement.Domain.Identity" Version="3.3.1" />
+    <PackageReference Include="Volo.Abp.BackgroundJobs.Domain" Version="3.3.1" />
+    <PackageReference Include="Volo.Abp.AuditLogging.Domain" Version="3.3.1" />
+    <PackageReference Include="Volo.Abp.TenantManagement.Domain" Version="3.3.1" />
+    <PackageReference Include="Volo.Abp.FeatureManagement.Domain" Version="3.3.1" />
+    <PackageReference Include="Volo.Abp.SettingManagement.Domain" Version="3.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Scoring.Domain.Shared\Scoring.Domain.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

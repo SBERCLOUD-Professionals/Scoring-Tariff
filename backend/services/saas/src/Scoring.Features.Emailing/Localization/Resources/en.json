@@ -1,0 +1,9 @@
+{
+  "culture": "en",
+  "texts": {
+    "ResetPassword:Title": "ResetPassword:Title",
+    "ResetPassword:Description": "ResetPassword:Description",
+    "ResetPassword:ConfirmAction": "ResetPassword:ConfirmAction",
+    "ResetPassword:Footer": "ResetPassword:Footer"
+  }
+}

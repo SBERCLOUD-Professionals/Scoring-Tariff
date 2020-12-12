@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <RootNamespace>Scoring</RootNamespace>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Volo.Abp.Emailing" Version="3.3.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <EmbeddedResource Include="Localization\Resources\*.json" />
+        <Content Remove="Localization\Resources\*.json" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <EmbeddedResource Include="Templates\*.tpl" />
+        <None Remove="Templates\*.tpl" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Scoring.Domain\Scoring.Domain.csproj" />
+    </ItemGroup>
+
+</Project>

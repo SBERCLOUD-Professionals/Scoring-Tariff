@@ -1,0 +1,9 @@
+{
+  "culture": "ru",
+  "texts": {
+    "ResetPassword:Title": "Восстановление пароля",
+    "ResetPassword:Description": "{0}, подтвердите почту.",
+    "ResetPassword:ConfirmAction": "Восстановить пароль",
+    "ResetPassword:Footer": "Если не запрашивали подтверждение почты, проигнорируйте это письмо."
+  }
+}
