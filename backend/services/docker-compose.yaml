@@ -1,0 +1,9 @@
+version: '3'
+services:
+  events:
+    build: 
+      context: .
+      dockerfile: Events.Dockerfile
+    environment:
+      - ConnectionStrings__Kafka=http://localhost:9092
+      - ConnectionStrings__Redis=localhost:6379

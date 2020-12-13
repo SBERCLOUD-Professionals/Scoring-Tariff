@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using Microsoft.EntityFrameworkCore;
+using Scoring.Tariffs;
 using Scoring.Users;
 using Volo.Abp.Data;
 using Volo.Abp.EntityFrameworkCore;
@@ -32,6 +33,9 @@ namespace Scoring.EntityFrameworkCore
         }
 
         public DbSet<AppUser> Users { get; private set; } = null!;
+        public DbSet<Tariff> Tariffs { get; private set; } = null!;
+        public DbSet<Feature> Features { get; private set; } = null!;
+        public DbSet<TariffFeature> TariffFeatures { get; private set; } = null!;
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
