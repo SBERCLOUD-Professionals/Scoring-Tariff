@@ -1,7 +1,10 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Scoring.Tariffs;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore;
+using Volo.Abp.EntityFrameworkCore.DependencyInjection;
 using Volo.Abp.EntityFrameworkCore.PostgreSql;
 using Volo.Abp.FeatureManagement.EntityFrameworkCore;
 using Volo.Abp.Identity.EntityFrameworkCore;
@@ -37,6 +40,15 @@ namespace Scoring.EntityFrameworkCore
                 /* Remove "includeAllEntities: true" to create
                  * default repositories only for aggregate roots */
                 options.AddDefaultRepositories(true);
+            });
+
+            Configure<AbpEntityOptions>(options =>
+            {
+                options.Entity<Tariff>(orderOptions =>
+                {
+                    orderOptions.DefaultWithDetailsFunc = query => query
+                        .Include(o => o.TariffFeatures).ThenInclude(x => x.Feature);
+                });
             });
 
             Configure<AbpDbContextOptions>(options =>

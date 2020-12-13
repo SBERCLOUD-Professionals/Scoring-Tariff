@@ -1,4 +1,5 @@
 ﻿using Scoring.MultiTenancy;
+using Scoring.Tariffs;
 using Volo.Abp.AuditLogging;
 using Volo.Abp.BackgroundJobs;
 using Volo.Abp.FeatureManagement;

@@ -1,25 +1,17 @@
-import {Page} from "@geist-ui/react";
-import Footer from "@home/containers/Footer";
-import Main from "@home/containers/Main";
+import {APP_HOME_ROUTE} from "@common/routes";
+import {routerUtils} from "@common/utils/router.utils";
+import {NextPageContext} from "next";
 
 interface Props {
 }
 
 const Index: React.FC<Props> = (props) => {
-
-  return (
-    <Page size="small" className={"page"}>
-      <Page.Header>
-        <h2>Header</h2>
-      </Page.Header>
-      <Page.Content className={"page_content"}>
-        <Main/>
-      </Page.Content>
-      <Page.Footer>
-        <Footer/>
-      </Page.Footer>
-    </Page>
-  );
+  return null;
 };
+
+(Index as any).getInitialProps = async (ctx: NextPageContext) => {
+  await routerUtils.redirect(APP_HOME_ROUTE, undefined, ctx);
+  return {};
+}
 
 export default Index;

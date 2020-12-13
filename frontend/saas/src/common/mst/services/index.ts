@@ -146,248 +146,6 @@ export class AuthService {
   }
 }
 
-export class ExerciseCategoriesService {
-  /**
-   *
-   */
-  exerciseCategories(
-    params: {
-      /** requestBody */
-      body?: CreateExerciseCategoryInput;
-    } = {} as any,
-    options: IRequestOptions = {}
-  ): Promise<ExerciseCategoryDto> {
-    return new Promise((resolve, reject) => {
-      let url = basePath + '/api/app/exerciseCategories';
-
-      const configs: IRequestConfig = getConfigs('post', 'application/json', url, options);
-
-      let data = params.body;
-
-      configs.data = data;
-      axios(configs, resolve, reject);
-    });
-  }
-  /**
-   *
-   */
-  exerciseCategories1(
-    params: {
-      /**  */
-      sorting?: string;
-      /**  */
-      skipCount?: number;
-      /**  */
-      maxResultCount?: number;
-    } = {} as any,
-    options: IRequestOptions = {}
-  ): Promise<ExerciseCategoryDtoPagedResultDto> {
-    return new Promise((resolve, reject) => {
-      let url = basePath + '/api/app/exerciseCategories';
-
-      const configs: IRequestConfig = getConfigs('get', 'application/json', url, options);
-      configs.params = {
-        Sorting: params['sorting'],
-        SkipCount: params['skipCount'],
-        MaxResultCount: params['maxResultCount']
-      };
-      let data = null;
-
-      configs.data = data;
-      axios(configs, resolve, reject);
-    });
-  }
-  /**
-   *
-   */
-  exerciseCategories2(
-    params: {
-      /**  */
-      id: string;
-      /** requestBody */
-      body?: UpdateExerciseCategoryInput;
-    } = {} as any,
-    options: IRequestOptions = {}
-  ): Promise<ExerciseCategoryDto> {
-    return new Promise((resolve, reject) => {
-      let url = basePath + '/api/app/exerciseCategories/{id}';
-      url = url.replace('{id}', params['id'] + '');
-
-      const configs: IRequestConfig = getConfigs('put', 'application/json', url, options);
-
-      let data = params.body;
-
-      configs.data = data;
-      axios(configs, resolve, reject);
-    });
-  }
-  /**
-   *
-   */
-  exerciseCategories3(
-    params: {
-      /**  */
-      id: string;
-    } = {} as any,
-    options: IRequestOptions = {}
-  ): Promise<any> {
-    return new Promise((resolve, reject) => {
-      let url = basePath + '/api/app/exerciseCategories/{id}';
-      url = url.replace('{id}', params['id'] + '');
-
-      const configs: IRequestConfig = getConfigs('delete', 'application/json', url, options);
-
-      let data = null;
-
-      configs.data = data;
-      axios(configs, resolve, reject);
-    });
-  }
-  /**
-   *
-   */
-  exerciseCategories4(
-    params: {
-      /**  */
-      id: string;
-    } = {} as any,
-    options: IRequestOptions = {}
-  ): Promise<ExerciseCategoryDto> {
-    return new Promise((resolve, reject) => {
-      let url = basePath + '/api/app/exerciseCategories/{id}';
-      url = url.replace('{id}', params['id'] + '');
-
-      const configs: IRequestConfig = getConfigs('get', 'application/json', url, options);
-
-      let data = null;
-
-      configs.data = data;
-      axios(configs, resolve, reject);
-    });
-  }
-}
-
-export class ExercisesService {
-  /**
-   *
-   */
-  exercises(
-    params: {
-      /** requestBody */
-      body?: CreateExerciseInput;
-    } = {} as any,
-    options: IRequestOptions = {}
-  ): Promise<ExerciseDto> {
-    return new Promise((resolve, reject) => {
-      let url = basePath + '/api/app/exercises';
-
-      const configs: IRequestConfig = getConfigs('post', 'application/json', url, options);
-
-      let data = params.body;
-
-      configs.data = data;
-      axios(configs, resolve, reject);
-    });
-  }
-  /**
-   *
-   */
-  exercises1(
-    params: {
-      /**  */
-      sorting?: string;
-      /**  */
-      skipCount?: number;
-      /**  */
-      maxResultCount?: number;
-    } = {} as any,
-    options: IRequestOptions = {}
-  ): Promise<ExerciseDtoPagedResultDto> {
-    return new Promise((resolve, reject) => {
-      let url = basePath + '/api/app/exercises';
-
-      const configs: IRequestConfig = getConfigs('get', 'application/json', url, options);
-      configs.params = {
-        Sorting: params['sorting'],
-        SkipCount: params['skipCount'],
-        MaxResultCount: params['maxResultCount']
-      };
-      let data = null;
-
-      configs.data = data;
-      axios(configs, resolve, reject);
-    });
-  }
-  /**
-   *
-   */
-  exercises2(
-    params: {
-      /**  */
-      id: string;
-      /** requestBody */
-      body?: UpdateExerciseInput;
-    } = {} as any,
-    options: IRequestOptions = {}
-  ): Promise<ExerciseDto> {
-    return new Promise((resolve, reject) => {
-      let url = basePath + '/api/app/exercises/{id}';
-      url = url.replace('{id}', params['id'] + '');
-
-      const configs: IRequestConfig = getConfigs('put', 'application/json', url, options);
-
-      let data = params.body;
-
-      configs.data = data;
-      axios(configs, resolve, reject);
-    });
-  }
-  /**
-   *
-   */
-  exercises3(
-    params: {
-      /**  */
-      id: string;
-    } = {} as any,
-    options: IRequestOptions = {}
-  ): Promise<any> {
-    return new Promise((resolve, reject) => {
-      let url = basePath + '/api/app/exercises/{id}';
-      url = url.replace('{id}', params['id'] + '');
-
-      const configs: IRequestConfig = getConfigs('delete', 'application/json', url, options);
-
-      let data = null;
-
-      configs.data = data;
-      axios(configs, resolve, reject);
-    });
-  }
-  /**
-   *
-   */
-  exercises4(
-    params: {
-      /**  */
-      id: string;
-    } = {} as any,
-    options: IRequestOptions = {}
-  ): Promise<ExerciseDto> {
-    return new Promise((resolve, reject) => {
-      let url = basePath + '/api/app/exercises/{id}';
-      url = url.replace('{id}', params['id'] + '');
-
-      const configs: IRequestConfig = getConfigs('get', 'application/json', url, options);
-
-      let data = null;
-
-      configs.data = data;
-      axios(configs, resolve, reject);
-    });
-  }
-}
-
 export class ProfileService {
   /**
    *
@@ -531,6 +289,24 @@ export class ResetPasswordService {
       const configs: IRequestConfig = getConfigs('post', 'application/json', url, options);
 
       let data = params.body;
+
+      configs.data = data;
+      axios(configs, resolve, reject);
+    });
+  }
+}
+
+export class TariffService {
+  /**
+   *
+   */
+  allTariff(options: IRequestOptions = {}): Promise<TariffDto[]> {
+    return new Promise((resolve, reject) => {
+      let url = basePath + '/api/tariff/tariff/allTariff';
+
+      const configs: IRequestConfig = getConfigs('post', 'application/json', url, options);
+
+      let data = null;
 
       configs.data = data;
       axios(configs, resolve, reject);
@@ -1088,126 +864,6 @@ export interface AuthenticateResult {
   expireInSeconds?: number;
 }
 
-export interface CreateExerciseCategoryInput {
-  /**  */
-  name: string;
-}
-
-export interface ExerciseCategoryDto {
-  /**  */
-  id?: string;
-
-  /**  */
-  creationTime?: Date;
-
-  /**  */
-  creatorId?: string;
-
-  /**  */
-  lastModificationTime?: Date;
-
-  /**  */
-  lastModifierId?: string;
-
-  /**  */
-  isDeleted?: boolean;
-
-  /**  */
-  deleterId?: string;
-
-  /**  */
-  deletionTime?: Date;
-
-  /**  */
-  name?: string;
-}
-
-export interface ExerciseCategoryDtoPagedResultDto {
-  /**  */
-  items?: ExerciseCategoryDto[];
-
-  /**  */
-  totalCount?: number;
-}
-
-export interface UpdateExerciseCategoryInput {
-  /**  */
-  name: string;
-}
-
-export interface CreateExerciseInput {
-  /**  */
-  name?: string;
-
-  /**  */
-  content?: string;
-
-  /**  */
-  categoryId?: string;
-}
-
-export interface FlatExerciseCategoryDto {
-  /**  */
-  id?: string;
-
-  /**  */
-  name?: string;
-}
-
-export interface ExerciseDto {
-  /**  */
-  id?: string;
-
-  /**  */
-  creationTime?: Date;
-
-  /**  */
-  creatorId?: string;
-
-  /**  */
-  lastModificationTime?: Date;
-
-  /**  */
-  lastModifierId?: string;
-
-  /**  */
-  isDeleted?: boolean;
-
-  /**  */
-  deleterId?: string;
-
-  /**  */
-  deletionTime?: Date;
-
-  /**  */
-  name?: string;
-
-  /**  */
-  content?: string;
-
-  /**  */
-  category?: FlatExerciseCategoryDto;
-}
-
-export interface ExerciseDtoPagedResultDto {
-  /**  */
-  items?: ExerciseDto[];
-
-  /**  */
-  totalCount?: number;
-}
-
-export interface UpdateExerciseInput {
-  /**  */
-  name?: string;
-
-  /**  */
-  content?: string;
-
-  /**  */
-  categoryId?: string;
-}
-
 export interface ProfileDto {
   /**  */
   extraProperties?: object;
@@ -1336,4 +992,9 @@ export interface ResetPasswordDto {
 
   /**  */
   password: string;
+}
+
+export interface TariffDto {
+  /**  */
+  name?: string;
 }

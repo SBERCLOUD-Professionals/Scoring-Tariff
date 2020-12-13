@@ -49,13 +49,14 @@ const App: React.FC<CustomAppProps> = ({Component, initialStoreState, pageProps}
   if (envUtils.isServer()) {
     rootStore.auth.sessionStore.initialize(appCtx.ctx);
     initialStoreState = getSnapshot(rootStore);
+  } else {
+    rootStore.auth.sessionStore.initialize(appCtx.ctx);
   }
 
   if (initialStoreState) {
     appProps.initialStoreState = initialStoreState;
   }
 
-  console.log(rootStore.auth.sessionStore.authenticated);
   if (rootStore.auth.sessionStore.authenticated) {
     // отправляем на страницу app
     if (href.startsWith(LOGIN_ROUTE) || href.startsWith(REGISTER_ROUTE)) {

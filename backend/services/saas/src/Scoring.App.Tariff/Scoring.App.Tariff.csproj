@@ -12,8 +12,4 @@
         <ProjectReference Include="..\Scoring.App.Core\Scoring.App.Core.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Dto" />
-    </ItemGroup>
-
 </Project>

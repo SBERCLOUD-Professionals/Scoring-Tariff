@@ -23,19 +23,41 @@ namespace Scoring.Seeders
 
         private IRepository<Tariff, Guid> TariffRepository { get; }
         private IRepository<Feature, Guid> FeatureRepository { get; }
+        private IRepository<TariffFeature, Guid> TariffFeatureRepository { get; }
 
         [UnitOfWork]
         public async Task SeedAsync(DataSeedContext context)
         {
             if (context.TenantId == null) return;
-            
-            var videoFeature = new Feature(GuidGenerator.Create(), "Видеозвонки", "video");
-            var audioFeature = new Feature(GuidGenerator.Create(), "Аудиозвонки", "audio");
-            var messagesFeature = new Feature(GuidGenerator.Create(), "Сообщения", "messages");
-            var historyFeature = new Feature(GuidGenerator.Create(), "История", "history");
-            var usersFeature = new Feature(GuidGenerator.Create(), "Пользователи", "users");
-            var projectsFeature = new Feature(GuidGenerator.Create(), "Проекты", "projects");
-            var ssoFeature = new Feature(GuidGenerator.Create(), "SSO", "sso");
+
+            var videoFeature = new Feature(GuidGenerator.Create(), "Видеозвонки", "video")
+            {
+                TenantId = context.TenantId
+            };
+            var audioFeature = new Feature(GuidGenerator.Create(), "Аудиозвонки", "audio")
+            {
+                TenantId = context.TenantId
+            };
+            var messagesFeature = new Feature(GuidGenerator.Create(), "Сообщения", "messages")
+            {
+                TenantId = context.TenantId
+            };
+            var historyFeature = new Feature(GuidGenerator.Create(), "История", "history")
+            {
+                TenantId = context.TenantId
+            };
+            var usersFeature = new Feature(GuidGenerator.Create(), "Пользователи", "users")
+            {
+                TenantId = context.TenantId
+            };
+            var projectsFeature = new Feature(GuidGenerator.Create(), "Проекты", "projects")
+            {
+                TenantId = context.TenantId
+            };
+            var ssoFeature = new Feature(GuidGenerator.Create(), "SSO", "sso")
+            {
+                TenantId = context.TenantId
+            };
 
             await FeatureRepository.InsertAsync(videoFeature, true);
             await FeatureRepository.InsertAsync(audioFeature, true);
@@ -45,17 +67,80 @@ namespace Scoring.Seeders
             await FeatureRepository.InsertAsync(projectsFeature, true);
             await FeatureRepository.InsertAsync(ssoFeature, true);
 
-            var basicTariff = new Tariff(GuidGenerator.Create(), "Базовый");
-            basicTariff.TariffFeatures.Add(new TariffFeature(GuidGenerator.Create(), basicTariff, videoFeature, 2));
-            basicTariff.TariffFeatures.Add(new TariffFeature(GuidGenerator.Create(), basicTariff, audioFeature, 2));
-            basicTariff.TariffFeatures.Add(new TariffFeature(GuidGenerator.Create(), basicTariff, messagesFeature, 2));
-            basicTariff.TariffFeatures.Add(new TariffFeature(GuidGenerator.Create(), basicTariff, historyFeature, 2));
-            basicTariff.TariffFeatures.Add(new TariffFeature(GuidGenerator.Create(), basicTariff, usersFeature, 2));
-            basicTariff.TariffFeatures.Add(new TariffFeature(GuidGenerator.Create(), basicTariff, projectsFeature, 2));
-            basicTariff.TariffFeatures.Add(new TariffFeature(GuidGenerator.Create(), basicTariff, ssoFeature, 2));
+            var basicTariff = new Tariff(GuidGenerator.Create(), "Базовый")
+            {
+                TenantId = context.TenantId
+            };
 
+            var mediumTariff = new Tariff(GuidGenerator.Create(), "Обычный")
+            {
+                TenantId = context.TenantId
+            };
+
+
+            basicTariff.TariffFeatures.Add(new TariffFeature(GuidGenerator.Create(), basicTariff, videoFeature, 2)
+            {
+                TenantId = context.TenantId
+            });
+            basicTariff.TariffFeatures.Add(new TariffFeature(GuidGenerator.Create(), basicTariff, audioFeature, 2)
+            {
+                TenantId = context.TenantId
+            });
+            basicTariff.TariffFeatures.Add(new TariffFeature(GuidGenerator.Create(), basicTariff, messagesFeature, 2)
+            {
+                TenantId = context.TenantId
+            });
+            basicTariff.TariffFeatures.Add(new TariffFeature(GuidGenerator.Create(), basicTariff, historyFeature, 2)
+            {
+                TenantId = context.TenantId
+            });
+            basicTariff.TariffFeatures.Add(new TariffFeature(GuidGenerator.Create(), basicTariff, usersFeature, 2)
+            {
+                TenantId = context.TenantId
+            });
+            basicTariff.TariffFeatures.Add(new TariffFeature(GuidGenerator.Create(), basicTariff, projectsFeature, 2)
+            {
+                TenantId = context.TenantId
+            });
+            basicTariff.TariffFeatures.Add(new TariffFeature(GuidGenerator.Create(), basicTariff, ssoFeature, 2)
+            {
+                TenantId = context.TenantId
+            });
+            
+            
+            // --
+
+            mediumTariff.TariffFeatures.Add(new TariffFeature(GuidGenerator.Create(), basicTariff, videoFeature, 10)
+            {
+                TenantId = context.TenantId
+            });
+            mediumTariff.TariffFeatures.Add(new TariffFeature(GuidGenerator.Create(), basicTariff, audioFeature, 10)
+            {
+                TenantId = context.TenantId
+            });
+            mediumTariff.TariffFeatures.Add(new TariffFeature(GuidGenerator.Create(), basicTariff, messagesFeature, 10)
+            {
+                TenantId = context.TenantId
+            });
+            mediumTariff.TariffFeatures.Add(new TariffFeature(GuidGenerator.Create(), basicTariff, historyFeature, 10)
+            {
+                TenantId = context.TenantId
+            });
+            mediumTariff.TariffFeatures.Add(new TariffFeature(GuidGenerator.Create(), basicTariff, usersFeature, 10)
+            {
+                TenantId = context.TenantId
+            });
+            mediumTariff.TariffFeatures.Add(new TariffFeature(GuidGenerator.Create(), basicTariff, projectsFeature, 10)
+            {
+                TenantId = context.TenantId
+            });
+            mediumTariff.TariffFeatures.Add(new TariffFeature(GuidGenerator.Create(), basicTariff, ssoFeature, 10)
+            {
+                TenantId = context.TenantId
+            });
 
             await TariffRepository.InsertAsync(basicTariff, true);
+            await TariffRepository.InsertAsync(mediumTariff, true);
         }
     }
 }

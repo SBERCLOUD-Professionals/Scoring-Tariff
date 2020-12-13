@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Scoring.EntityFrameworkCore;
@@ -10,9 +11,10 @@ using Volo.Abp.EntityFrameworkCore;
 namespace Scoring.Migrations
 {
     [DbContext(typeof(ScoringMigrationsDbContext))]
-    partial class ScoringMigrationsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201213054104_TariffFix2")]
+    partial class TariffFix2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1252,7 +1254,7 @@ namespace Scoring.Migrations
 
             modelBuilder.Entity("Scoring.Tariffs.TariffFeature", b =>
                 {
-                    b.HasOne("Scoring.Tariffs.Feature", "Feature")
+                    b.HasOne("Scoring.Tariffs.Feature", null)
                         .WithMany("TariffFeatures")
                         .HasForeignKey("FeatureId")
                         .OnDelete(DeleteBehavior.Cascade)

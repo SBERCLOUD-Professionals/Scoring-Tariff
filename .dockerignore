@@ -1,0 +1,11 @@
+.git
+.gitignore
+.dockerignore
+Dockerfile
+./**/**/Dockerfile
+docker-compose.yml
+./**/**/docker-compose.yml
+node_modules
+./**/**/node_modules
+.next
+./**/**/.next

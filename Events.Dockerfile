@@ -4,10 +4,10 @@ LABEL autodelete="true"
 
 WORKDIR /app
 
-COPY . .
+COPY ./backend/services/ .
+RUN file="$(ls -1 ./)" && echo $file
 WORKDIR ./events
 RUN dotnet publish -o out -c Release
-
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS runtime
 # ENV ASPNETCORE_URLS https://+:443;http://+:$PORT
 ENV ASPNETCORE_URLS http://+:80

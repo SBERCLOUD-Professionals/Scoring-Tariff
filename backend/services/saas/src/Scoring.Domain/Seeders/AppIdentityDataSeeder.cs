@@ -94,18 +94,17 @@ namespace Scoring.Seeders
 
                 (await UserManager.AddToRoleAsync(adminUser, ScoringRoleNames.Admin)).CheckErrors();
                 var multiTenancySides = CurrentTenant.GetMultiTenancySide();
-                await GrantedAllPermissionsToAdminRole(adminRole, multiTenancySides);
-
+                await GrantedAllPermissionsToAdminUser(adminUser, multiTenancySides);
                 return result;
             }
         }
 
-        private async Task GrantedAllPermissionsToAdminRole(IdentityRole adminRole, MultiTenancySides multiTenancySides)
+        private async Task GrantedAllPermissionsToAdminUser(IdentityUser adminUser, MultiTenancySides multiTenancySides)
         {
             foreach (var permission in PermissionDefinitionManager.GetPermissions())
             {
                 if (permission.MultiTenancySide != multiTenancySides) continue;
-                await PermissionManager.SetForRoleAsync(adminRole.Name, permission.Name, true);
+                await PermissionManager.SetForUserAsync(adminUser.Id, permission.Name, true);
             }
         }
     }

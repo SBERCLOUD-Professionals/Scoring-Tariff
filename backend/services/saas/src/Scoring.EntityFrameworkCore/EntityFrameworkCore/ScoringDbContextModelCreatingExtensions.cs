@@ -27,7 +27,7 @@ namespace Scoring.EntityFrameworkCore
                 model.Property(x => x.Name).IsRequired();
                 model.Property(x => x.SKU).IsRequired();
                 model.HasMany(x => x.TariffFeatures)
-                    .WithOne().HasForeignKey(x => x.FeatureId);
+                    .WithOne(x=> x.Feature).HasForeignKey(x => x.FeatureId);
             });
 
             builder.Entity<TariffFeature>(model =>

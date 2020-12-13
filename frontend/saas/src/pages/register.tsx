@@ -96,7 +96,7 @@ const Register: PageFC<Props> = ({}) => {
 
   return (
     <div className={classes.root}>
-      <Text h1>Регистрация в EHOK</Text>
+      <Text h1>Регистрация в Scoring</Text>
       <div className={classes.content}>
         <Card>
           <Form

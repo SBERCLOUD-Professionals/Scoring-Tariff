@@ -12,7 +12,7 @@ const useStyles = createUseStyles((theme: AppTheme) => ({
       ...theme.layout.templates.flexColumn(),
       ...theme.layout.templates.flexGrow(),
       ...theme.layout.templates.flexNoWrap(),
-      marginTop: -40,
+      marginTop: 0,
       opacity: isLoading ? 0 : 1
     });
   }

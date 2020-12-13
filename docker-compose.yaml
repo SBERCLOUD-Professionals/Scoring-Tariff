@@ -1,0 +1,54 @@
+version: '3'
+
+services:
+  postgres:
+      image: postgres
+      hostname: postgres
+      volumes:
+        - postgres_scoring_tariff_prod:/var/lib/postgresql/data
+      ports:
+        - 6432:5432
+      environment:
+        - POSTGRES_USER=developer
+        - POSTGRES_PASSWORD=password
+        - POSTGRES_DB=scoring
+  redis:
+    image: redis
+    hostname: redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./data/redis:/data
+    entrypoint: redis-server --appendonly yes
+  kafka:
+    image: johnnypark/kafka-zookeeper
+    ports:
+      - 2181:2181
+      - 9092:9092
+    environment:
+      - ADVERTISED_HOST=127.0.0.1
+  events:
+    build: 
+      context: .
+      dockerfile: Events.Dockerfile
+    ports: 
+      - "700:80"
+    depends_on: 
+      - redis
+      - kafka
+    environment:
+      - ConnectionStrings__Kafka=kafka:9092
+      - ConnectionStrings__Redis=redis:6379
+  event_web_client:
+    build: 
+      context: .
+      dockerfile: Events.WebClient.Dockerfile
+      args:                                                                     
+         - NEXT_PUBLIC_EVENT_API_URL=events:700
+    depends_on: 
+      - events
+    environment:
+      - NEXT_PUBLIC_EVENT_API_URL=events:700
+
+volumes:
+  postgres_scoring_tariff_prod:

@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3002",
     "build": "next build",
     "start": "next start",
     "analyze": "cross-env ANALYZE=true yarn build",
@@ -26,9 +26,7 @@
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-final-form": "^6.5.2",
-    "react-jss": "^10.5.0",
-    "slate": "^0.59.0",
-    "slate-react": "^0.59.0"
+    "react-jss": "^10.5.0"
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^10.0.3",

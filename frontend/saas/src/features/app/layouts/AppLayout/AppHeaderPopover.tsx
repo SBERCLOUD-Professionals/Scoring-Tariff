@@ -79,7 +79,7 @@ const AppHeaderPopover: React.FC<Props> = ({className}) => {
       <User
         src={require("@common/assets/images/avatar.svg")}
         name={sessionInfo?.name} className={clsx(classes.user, className)}
-      >Учитель</User>
+      />
     </Popover>
   );
 };

@@ -5,6 +5,7 @@ import {SessionInfoModel} from "@common/mst/stores/auth/session/sessionInfo.mode
 import {FormResult} from "@common/mst/stores/shared/_results";
 import {IRootEnv} from "@common/mst/env";
 import {AuthContext} from "@common/mst/env/providers/auth.provider";
+import {envUtils} from "@common/utils/env.utils";
 
 export const SessionStore = types.model("SessionStore", {
   tenantId: types.optional(types.maybeNull(types.number), null),
@@ -21,7 +22,13 @@ export const SessionStore = types.model("SessionStore", {
     })
   }
 
-  return ({
+  const actions = {
+
+    afterCreate() {
+      if(envUtils.isServer()) return;
+      actions.initialize();
+    },
+
     initialize(ctx?: any): AuthContext | undefined {
       const {authProvider} = getEnv<IRootEnv>(self).providers;
       const authContext = authProvider.initialize(ctx);
@@ -72,7 +79,9 @@ export const SessionStore = types.model("SessionStore", {
       yield authProvider.logout();
       self.info = null;
     })
-  });
+  };
+
+  return actions;
 }).views(self => ({
   get authenticated(): boolean {
     return !!self.info;

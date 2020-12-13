@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using Volo.Abp.Domain.Entities.Auditing;
+using Volo.Abp.MultiTenancy;
 
 namespace Scoring.Tariffs
 {
-    public class Feature : AuditedEntity<Guid>
+    [SuppressMessage("ReSharper", "AutoPropertyCanBeMadeGetOnly.Global")]
+    public class Feature : AuditedEntity<Guid>, IMultiTenant
     {
         public Feature()
         {
@@ -21,5 +24,6 @@ namespace Scoring.Tariffs
 
         public string Name { get; set; }
         public string SKU { get; set; }
+        public Guid? TenantId { get; set; }
     }
 }

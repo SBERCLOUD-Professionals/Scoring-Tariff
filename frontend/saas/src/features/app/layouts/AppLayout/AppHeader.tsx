@@ -1,7 +1,7 @@
 import React, {createRef, useCallback, useEffect, useState} from 'react';
 import {useRouter} from "next/router";
 import {Tabs} from "@geist-ui/react";
-import {APP_HOME_ROUTE, APP_SETTINGS_ROUTE} from "@common/routes";
+import {APP_HOME_ROUTE} from "@common/routes";
 import {AppTheme} from "@common/theme";
 import {createUseStyles} from 'react-jss';
 import AppHeaderPopover from "@app/layouts/AppLayout/AppHeaderPopover";
@@ -111,7 +111,6 @@ const AppHeader: React.FC<Props> = ({routerEventPath}) => {
         </div>
         <Tabs value={basePath} onChange={handleChangeTab}>
           <Tabs.Item label="Главная" value={APP_HOME_ROUTE}/>
-          <Tabs.Item label="Настройки" value={APP_SETTINGS_ROUTE}/>
         </Tabs>
       </div>
     </div>

@@ -33,9 +33,9 @@ namespace Scoring.EntityFrameworkCore
         }
 
         public DbSet<AppUser> Users { get; private set; } = null!;
-        public DbSet<Tariff> Tariffs { get; private set; } = null!;
-        public DbSet<Feature> Features { get; private set; } = null!;
-        public DbSet<TariffFeature> TariffFeatures { get; private set; } = null!;
+        public DbSet<Tariff> Tariff { get; private set; } = null!;
+        public DbSet<Feature> Feature { get; private set; } = null!;
+        public DbSet<TariffFeature> TariffFeature { get; private set; } = null!;
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

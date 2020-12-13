@@ -37,14 +37,6 @@ const useStyles = createUseStyles((theme: AppTheme) => ({
     ...theme.layout.templates.flexCenter(),
     paddingTop: theme.spacing(0.5)
   },
-  resetPassword: {
-    fontSize: '0.9rem',
-    color: `${theme.palette.text.secondary} !important`,
-    '&:hover': {
-      color: `${theme.palette.link} !important`,
-      textDecoration: 'underline !important',
-    }
-  },
   footer: {
     alignSelf: 'center',
     padding: theme.spacing(1, 0)
@@ -99,7 +91,7 @@ const Login: PageFC<Props> = ({}) => {
 
   return (
     <div className={classes.root}>
-      <Text h1>Войти в EHOK</Text>
+      <Text h1>Войти в Scoring</Text>
       <div className={classes.content}>
         <Card>
           <Form
@@ -142,9 +134,6 @@ const Login: PageFC<Props> = ({}) => {
               </form>)}>
           </Form>
         </Card>
-        <div className={classes.otherActions}>
-          <WrapLink className={classes.resetPassword} href="/reset_password">Восстановление пароля</WrapLink>
-        </div>
       </div>
     </div>
   );
